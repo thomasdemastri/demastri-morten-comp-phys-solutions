@@ -1,15 +1,17 @@
-/*
-
-A Very simple setup program to ensure that my C++ 
-environment is up and running :) 
-
-*/
-
-
+#include <math.h>
+#include <string>
 #include <iostream>
 
-using namespace std;
+#include "../include/ScientificHelloWorld.h"
+
 
 int main(){
-	cout<<"Hello World!\n";	
+
+	std::string message = "Hello World!";
+	double argument = 0.0;
+
+	ScientificHelloWorld* helloWorld = new ScientificHelloWorld(message,argument);
+
+	helloWorld->printMessage();
+
 }
