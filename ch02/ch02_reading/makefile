@@ -10,3 +10,9 @@ PROG=2_2_1_DecimalToBinary
 2_2_1:
 	${CC} -o out/${PROG}.o src/${PROG}.cpp
 
+PROG=2_2_2_OverflowExample
+
+2_2_2:
+	${CC} -o out/${PROG}.o src/${PROG}.cpp
+
+
