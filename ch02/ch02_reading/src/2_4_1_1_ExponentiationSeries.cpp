@@ -24,17 +24,19 @@ main
 	PRECISION arg,term,sum;
 
 	for(arg=0.0;arg<=100.0;arg+=10.0){
-		
+//	for(arg=0.0;arg<=1.0;arg+=10.0){	
 		n=0;
-		sum=0.0;
+		
 		term = 1.0;
+
+		sum = 1.0;
 
 		while(fabs(term)>TRUNCATION){
 
+			n++;
 			term = (PRECISION) PHASE(n)*(PRECISION)pow((PRECISION) arg,(PRECISION) n)/factorial(n);
 //			std::cout<<term<<std::endl;			
 			sum+=term;
-			n++;
 
 		}
 
