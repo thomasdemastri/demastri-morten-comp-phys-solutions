@@ -11,9 +11,9 @@
 
 #define PRECISION double
 #define PHASE(a)  (1-2*(abs(a)%2))
-#define TRUNCATION 1.0E-10
+#define TRUNCATION 1.0E-16
 
-PRECISION factorial(int n);
+//PRECISION factorial(int n);
 
 int
 main
@@ -25,29 +25,28 @@ main
 
 	for(arg=0.0;arg<=100.0;arg+=10.0){
 //	for(arg=0.0;arg<=1.0;arg+=10.0){	
-		n=0;
+		
+		n=1;
 		
 		term = 1.0;
 
 		sum = 1.0;
 
 		while(fabs(term)>TRUNCATION){
-
-			n++;
-			term = (PRECISION) PHASE(n)*(PRECISION)pow((PRECISION) arg,(PRECISION) n)/factorial(n);
-//			std::cout<<term<<std::endl;			
+	
+			term *= -arg/((PRECISION) n);			
 			sum+=term;
-
+			n++;
 		}
 
 		std::cout << " x = " << arg << " exp = " << exp(-arg) <<" series = " << sum;
-		std::cout << " number of terms = " << n << std::endl;
+		std::cout << " number of terms = " << n-1 << std::endl;
 	}
 	
 
 }
 
-
+/*
 PRECISION
 factorial
 (int n)
@@ -58,4 +57,4 @@ factorial
 		fac *= loop;
 	}
 	return fac;
-}
+}*/

@@ -1,24 +1,33 @@
 CC=g++ -Wall
 
-PROG=2_1_1_ScientificHelloWorld
+PROG1=2_1_1_ScientificHelloWorld
 
 2_1_1:
-	${CC} -o out/${PROG}.o src/${PROG}.cpp
+	${CC} -o out/${PROG1}.o src/${PROG1}.cpp
 
-PROG=2_2_1_DecimalToBinary
+PROG2=2_2_1_DecimalToBinary
 
 2_2_1:
-	${CC} -o out/${PROG}.o src/${PROG}.cpp
+	${CC} -o out/${PROG2}.o src/${PROG2}.cpp
 
-PROG=2_2_2_OverflowExample
+PROG3=2_2_2_OverflowExample
 
 2_2_2:
-	${CC} -o out/${PROG}.o src/${PROG}.cpp
+	${CC} -o out/${PROG3}.o src/${PROG3}.cpp
 
-PROG=2_4_1_1_exponentiation
+PROG4=2_4_1_1_ExponentiationSeries
 
 2_4_1_1:
-	${CC} -o out/${PROG}.o src/${PROG}.cpp
+	${CC} -o out/${PROG4}.o src/${PROG4}.cpp
 
+PROG5=2_4_1_2_ExponentiationRecursion
+
+2_4_1_2:
+	${CC} -o out/${PROG5}.o src/${PROG5}.cpp
+
+PROG6=2_4_3_2_StandardDeviation
+
+2_4_3_2:
+	${CC} -o out/${PROG6}.o src/${PROG6}.cpp
 
 
