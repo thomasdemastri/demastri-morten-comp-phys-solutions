@@ -15,4 +15,10 @@ PROG=2_2_2_OverflowExample
 2_2_2:
 	${CC} -o out/${PROG}.o src/${PROG}.cpp
 
+PROG=2_4_1_1_exponentiation
+
+2_4_1_1:
+	${CC} -o out/${PROG}.o src/${PROG}.cpp
+
+
 
