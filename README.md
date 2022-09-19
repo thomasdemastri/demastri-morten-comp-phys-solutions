@@ -1,1 +1,5 @@
-README file
+# My Solutions to Morten Horth Jensen's Computational Physics notes
+<br>
+<p>
+Hello! My name is Thomas DeMastri - I am a recent(ish) graduate from Michigan State University and am now a junior software developer. I had the pleasure of taking a course in computational physics in my latter years at MSU taught by Prof. Jensen's close colleague, Prof. Scott Bogner. I enjoyed the class greatly, but we did not get through the majority of the material in the text the course was taught out of, namely, <a href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Lectures/lectures2015.pdf"> Prof. Jensen's notes (posted publicly on his github).</a>  </p>
+<p> As I've started work as a developer, working through these notes seemed like an excellent way to learn C++ and keep my physics skills a little sharp. I'm posting these solutions as a demonstration that I have non-zero skill with C++, but also on the offchance that someone who's reading this might have worked through the same material and may have a better solution that we could discuss. If so, don't be a stranger! Please email me at thomas.patrick@demastri.com :)
