@@ -15,6 +15,9 @@ set grid ytics xtics
 set xrange [0:12]
 set yrange [-17:1]
 
+set size ratio -1
+set size 2,2
+
 set ylabel 'log10(|s_up-s_down|/s_down)'
 set xlabel 'log10(N)'
 
