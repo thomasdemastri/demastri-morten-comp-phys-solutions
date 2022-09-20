@@ -4,6 +4,14 @@
  *
  * The number it converts is entered as an argument by the user.
  *
+ * It calculates the scale first by finding the interval [2^N,2^N+1] it falls on, checking N
+ * on the interval [-MAX_EXPONENT, MAX_EXPONENT]
+ *
+ * It calculates 32 bits of percision on the mantissa. Something like the method of bisection is used,
+ * where the mnantissa is summed through the current digit. It attempts to add the next digit. If that 
+ * goes over the decimal passed, the digit is set to zero and the process is repeated with the next
+ * digit.
+ *
  */
 
 #include<iostream>
