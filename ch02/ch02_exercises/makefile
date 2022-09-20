@@ -1,4 +1,4 @@
-CC=g++ -Wall
+CC=g++ -g -Wall
 
 PROG1=2_6_1_FloatingDecimalToFloatingBinary
 
@@ -10,7 +10,7 @@ PROG2=2_6_2_1_SumUpVsSumDown
 2_6_2_1:
 	${CC} -o out/${PROG2}.o src/${PROG2}.cpp
 
-PROG3=2_2_2_OverflowExample
+PROG3=2_6_2_2_SumUpVsSumDownWriteToFile
 
 2_6_2_2:
 	${CC} -o out/${PROG3}.o src/${PROG3}.cpp

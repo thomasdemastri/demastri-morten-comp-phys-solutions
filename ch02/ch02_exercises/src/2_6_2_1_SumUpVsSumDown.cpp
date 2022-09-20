@@ -17,18 +17,20 @@
 #include<string>
 #include<functional>
 
-#define PRECISION float
+#define PRECISION double
 
-int N;
-auto increase = [](auto n){return n+1;};
-auto decrease = [](auto n){return n-1;};
-auto sum_up_condition = [](auto n){return n==N;};
-auto sum_down_condition = [](auto n){return n==1;};
+PRECISION N;
+
+auto increase = [](auto n){return n + (long) 1;};
+auto decrease = [](auto n){return n - (long) 1;};
+
+std::function<bool(unsigned long)> sum_up_condition = [](unsigned long n){return n<(unsigned long) N;};
+std::function<bool(unsigned long)> sum_down_condition = [](unsigned long n){return n>(unsigned long) 1;};
 
 
-void sum(int n, PRECISION *sum,
-		std::function<int(int)> iterate,
-		std::function<bool(int)> condition);
+PRECISION
+sum
+(PRECISION starting_index,std::function<unsigned long(unsigned long)> iterate,std::function<bool(unsigned long)> condition);
 
 
 int
@@ -42,33 +44,41 @@ main
 	}
 
 	// grab N from the user
-	N = atoi(argv[1]);
+	N = atof(argv[1]);
 	
-	//intialize our sum up values
-	PRECISION sum_val;	
-	PRECISION *s_up=&sum_val;
+	//intialize our sum values
+	PRECISION s_up,s_down;	
 
-	// perform the sum
-	*s_up = 0.0;
-	sum(1,s_up,increase,sum_up_condition);
-	std::cout<<"s_up = "<<*s_up << std::endl;
+	//perform the sum for incresasing from n=1
+	s_up = sum(1.0,increase,sum_up_condition);
+	std::cout<<"s_up = "<<s_up << std::endl;
 
-	/*do the same process for summing down
-	PRECISION *s_down=&sum_val;
-	*s_down=0.0;
-	sum(N,s_down,decrease,sum_down_condition);
-	std::cout<<"s_down = "<<*s_down << std::endl;
-*/
+	// do the same process for summing down
+	s_down = sum(N,decrease,sum_down_condition);
+	std::cout<<"s_down = "<< s_down << std::endl;
+
 	
 }
 
-void
+PRECISION
 sum
-(int n, PRECISION *sum_val,std::function<int(int)> iterate,std::function<bool(int)> condition)
+(PRECISION starting_index,std::function<unsigned long(unsigned long)> iterate,std::function<bool(unsigned long)> condition)
 {
-	*sum_val += 1.0/((PRECISION) n);
-	if(condition(n)){return;}
-	sum(iterate(n),sum_val,iterate,condition);
+
+	unsigned long index = (unsigned long) starting_index;
+	
+	PRECISION n = (PRECISION) index;
+	PRECISION sum = 1.0/n;
+
+	while(condition(index)){
+		index = iterate(index);
+		n = (PRECISION) index;
+		sum += 1.0/n;	
+
+	}
+
+	return sum;
 }
+
 
 
