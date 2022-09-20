@@ -61,7 +61,7 @@ main
 	std::ofstream file;
 	file.open(filepath,std::ios::out);
 	file.clear();
-	file << "N, s_up, s_down, log10(N), log10(|s_up-s_down|/s_down)" <<std::endl;
+	file << "N,s_up,s_down,log10(N),log10(|s_up-s_down|/s_down)" <<std::endl;
 
 
 	for(int i =0; i<11;i++){
@@ -76,7 +76,7 @@ main
 		s_down = sum(N,decrease,sum_down_condition);
 		std::cout<<", s_down = "<< s_down << std::endl;
 
-		file << N <<"	"<< s_up<<"	" << s_down<<"     " << log10(N)<<"     " <<  log10(fabs(s_up-s_down)/s_down) << std::endl;
+		file << N <<","<< s_up<<"," << s_down<<"," << log10(N)<<"," <<  log10(fabs(s_up-s_down)/s_down) << std::endl;
 	}
 	
 	file.close();
