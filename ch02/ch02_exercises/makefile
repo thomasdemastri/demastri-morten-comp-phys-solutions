@@ -5,14 +5,14 @@ PROG1=2_6_1_FloatingDecimalToFloatingBinary
 2_6_1:
 	${CC} -o out/${PROG1}.o src/${PROG1}.cpp
 
-PROG2=2_2_1_DecimalToBinary
+PROG2=2_6_2_1_SumUpVsSumDown
 
-2_6_2:
+2_6_2_1:
 	${CC} -o out/${PROG2}.o src/${PROG2}.cpp
 
 PROG3=2_2_2_OverflowExample
 
-2_2_2:
+2_6_2_2:
 	${CC} -o out/${PROG3}.o src/${PROG3}.cpp
 
 PROG4=2_4_1_1_ExponentiationSeries
