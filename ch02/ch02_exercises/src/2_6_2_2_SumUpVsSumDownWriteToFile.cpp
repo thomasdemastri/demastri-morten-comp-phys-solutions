@@ -7,8 +7,14 @@
  * and works its way up (the analytical way) and the second way it 
  * starts from the top and works its way down.
  *
- * It reads in the value of N from the user and outputs their results to 
- * the screen.
+ * It calculates the sum in the specified precision using both techniques
+ * for every N=10^a, a being an integer on [0,10]. The values and log relative
+ * error between s_up and s_down are stored in separate data files for each 
+ * precision.
+ *
+ * We use gnuplot to plot the log relative error against log(N) to analyze
+ * the error.
+ * 
  *
  */
 
@@ -19,7 +25,7 @@
 #include<functional>
 #include <typeinfo>
 
-#define PRECISION float
+#define PRECISION double
 
 PRECISION N;
 

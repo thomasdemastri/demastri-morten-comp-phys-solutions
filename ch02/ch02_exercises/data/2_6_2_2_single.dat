@@ -1,4 +1,4 @@
-N, s_up, s_down, log10(N), log10(|s_up-s_down|/s_down)
+N,s_up,s_down,log10(N),log10(|s_up-s_down|/s_down)
 1,1,1,0,-inf
 10,2.92897,2.92897,1,-inf
 100,5.18738,5.18738,2,-6.73555
