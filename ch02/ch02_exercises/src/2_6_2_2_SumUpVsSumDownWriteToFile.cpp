@@ -3,8 +3,8 @@
  *
  * 	SIGMA_n=1^N[1/n]
  * 
- * in two different ways. The first way, it starts from the bottom
- * and works its way up (the analytical way) and the second way it 
+ * in two different ways. The first way starts from the bottom
+ * and works its way up (the analytical way); the second way 
  * starts from the top and works its way down.
  *
  * It calculates the sum in the specified precision using both techniques
@@ -12,9 +12,23 @@
  * error between s_up and s_down are stored in separate data files for each 
  * precision.
  *
+ * s_down seems to be the preferred method. At single precision, s_up starts to level off
+ * at ~ N=10^8. Single precision can only store around 8 decimal places accurately, so numbers
+ * on the range of 10^-8 get rounded to zero when performing operations with numbers on
+ * the order of 10^0 or 10^1. s_down runs into higher levels of error in the N>10^8 regime as well,
+ * though it retains some of the bits from the sumnation in that region when it moves below
+ * 10^8 - s_up gets no information from them at all. This is why we see single precision s_down
+ * more closely match the values of double precision sumnations for longer, though eventually its
+ * sumnation value levels off as well.
+ *
+ * I expect that if we carried out our calculations for a on the interval [10,20], the double precision
+ * s_up would start to 'round off' around the 10^16 mark, and the s_down method soon after.
+ *
  * We use gnuplot to plot the log relative error against log(N) to analyze
- * the error.
- * 
+ * the error in both precisions.
+ *
+ * We find that at single precision, error accumulates at roughly eps ~ N.
+ * At double precision, error accumulates at eps ~ sqrt(N)
  *
  */
 
